@@ -4,7 +4,7 @@ export default defineContentScript({
     main() {
         console.log('Process initiated, content script isd triggered');
 
-        const analyser =  new ElementAnalyser(()=>{
+        const analyser =  new MutationObserver(()=>{
             console.log('Analysing the message input field');
 
             const messageField = document.querySelector(".msg-form__contenteditable");
@@ -38,7 +38,7 @@ chrome.runtime.onMessage.addListener;((message, _sender, sendResponse)=>{
 const tailwindCSSInjection =()=>{
     const tailwindConnection = document.createElement('link');
     tailwindConnection.rel = 'stylesheet';
-    tailwindConnection.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+    tailwindConnection.href = 'https://cdn.tailwindcss.com';
     document.head.appendChild(tailwindConnection);
 
 }
