@@ -1,4 +1,5 @@
 import React from 'react'
+import AIReplyButton from '../component/buttonVariants/aiReplyButton/AIReplyBtn';
 import { createRoot } from 'react-dom/client';
 
 export const injectExtensionIcon = (messageField: Element) => {
