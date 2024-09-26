@@ -1,4 +1,5 @@
-import {injectExtensionIcon} from '../entrypoints/popup/utilities/utilMethod'
+import {injectExtensionIcon} from '../entrypoints/popup/utilities/utilMethod';
+
 export default defineContentScript({
     matches: ['*://www.linkedin.com/messaging/*'],
     main() {
@@ -38,12 +39,12 @@ chrome.runtime.onMessage.addListener;((message, _sender, sendResponse)=>{
 const tailwindCSSInjection =()=>{
     const tailwindConnection = document.createElement('link');
     tailwindConnection.rel = 'stylesheet';
-    tailwindConnection.href = 'https://cdn.tailwindcss.com';
+    tailwindConnection.href = 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
     document.head.appendChild(tailwindConnection);
 
 }
 
-tailwindCSSInjection()
+tailwindCSSInjection();
 
 
 
