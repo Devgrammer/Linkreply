@@ -1,5 +1,6 @@
 import React from 'react'
-import AIReplyButton from '../component/buttonVariants/aiReplyButton/AIReplyBtn';
+import AIReplyButton from '../component/buttonVariants/aiReplyButton/AIReplyButton';
+import AIPromptModal from '../component/aiPromptModal/AIPromptModal';
 import { createRoot } from 'react-dom/client';
 
 export const injectExtensionIcon = (messageField: Element) => {
@@ -52,10 +53,10 @@ const addFocusPlusBlurListeners =(messageField: Element, aiIconContainer: HTMLDi
 };
 
 
-const addIconClickListener = (aiIconContianer: HTMLDivElement) =>{
-  aiIconContianer.addEventListener('click', (e)=>{
+const addIconClickListener = (aiIconContainer: HTMLDivElement) =>{
+  aiIconContainer.addEventListener('click', (e)=>{
     e.preventDefault();
-    aiIconContianer.style.display = 'none';
+    aiIconContainer.style.display = 'none';
      const modalFormContainer = createModalFormContainer();
      document.body.appendChild(modalFormContainer);
 
@@ -78,7 +79,7 @@ const createModalFormContainer = ():HTMLDivElement =>{
       left: '0',
       height: '100%',
       width: '100%',
-      zIndex: '9999',
+      zIndex: '1000',
    });
 
    return modalFormContainer;
