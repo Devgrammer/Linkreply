@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import PromptGenerationButton from "../buttonVariants/PromptGenerationBtn";
-
+import PromptGenerationButton from "../buttonVariants/promptGenerationButton/PromptGenerationButton";
+import ChatMessage from '../chatMessage/ChatMessage'
 interface PromptModalProps {
   closeModal: () => void;
 }
@@ -36,14 +36,7 @@ const PromptModal: React.FC<PromptModalProps> = ({ closeModal }) => {
       let timeoutId: NodeJS.Timeout;
       if (messages.length === 1 && messages[0].isUser) {
         timeoutId = setTimeout(() => {
-          setMessages([
-            ...messages,
-            {
-              message:
-                "Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.",
-              isUser: false,
-            },
-          ]);
+          setMessages([...messages,{message:"Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.",isUser: false,}]);
         }, 200);
       }
       return () => clearTimeout(timeoutId);
@@ -61,7 +54,7 @@ return (
       style={{ width: "25%" }}
       ref={modalRef}
     >
-      {/* <ChatMessage message={messages} /> */}
+      <ChatMessage message={messages} />
       <input
         type="text"
         className="w-full  rounded border border-gray-100 p-2 mb-4"
@@ -71,7 +64,7 @@ return (
       />
       <PromptGenerationButton
         messages={messages}
-        handleGenerate={ handleGeneratePrompt }
+        handleGenerate={handleGeneratePrompt}
       />
     </div>
   </div>

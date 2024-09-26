@@ -1,7 +1,7 @@
 import React from "react";
-import RegenerationIcon from "../../../../assets/generation.svg";
-import GenerationIcon from "../../../../assets/generation.svg";
-import PromptInsertButton from "./promptInsertButton/PromptInsertButton";
+import RegenerationIcon from "../../../../../assets/regeneration.svg"
+import GenerationIcon from "../../../../../assets/generation.svg";
+import PromptInsertButton from "../promptInsertButton/PromptInsertButton";
 
 interface PromptGenerationBtnProps {
   messages: {
