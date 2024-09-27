@@ -1,4 +1,4 @@
-import {injectExtensionIcon} from '../entrypoints/popup/utilities/utilMethod';
+import {injectExtensionIcon} from '@/entrypoints/popup/utilities/utilMethod';
 
 export default defineContentScript({
     matches: ['*://www.linkedin.com/messaging/*'],
@@ -22,12 +22,12 @@ export default defineContentScript({
 
 
 
-chrome.runtime.onMessage.addListener;((message, _sender, sendResponse)=>{
+chrome.runtime.onMessage.addListener((message, _sender, sendResponse)=>{
     if(message.from === "insert-btn"){
         const messageTextField = document.querySelector(".msg-form__contenteditable");
         if(messageTextField){
             (messageTextField as HTMLElement).focus();
-            document.execCommand('insertResponseText', false, message.text);
+            document.execCommand('insertText', false, message.text);
             sendResponse({status: 'success'})
         }else{
             sendResponse({status: 'failed', reason:'Message input field is not available now'});
@@ -45,6 +45,7 @@ const tailwindCSSInjection =()=>{
 }
 
 tailwindCSSInjection();
+
 
 
 

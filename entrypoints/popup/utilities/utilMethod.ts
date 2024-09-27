@@ -15,7 +15,7 @@ rootElement.render(React.createElement(AIReplyButton));
 
 };
 
-const  createAIIconContainer = ():HTMLElement =>{
+  function createAIIconContainer(): HTMLDivElement {
    const aiIconContainer = document.createElement('div');
    aiIconContainer.id = 'ai-button-container';
    Object.assign(aiIconContainer.style,{
@@ -46,7 +46,7 @@ const addFocusPlusBlurListeners =(messageField: Element, aiIconContainer: HTMLDi
 
   messageField.addEventListener('blur', (e: Event)=>{
   const targetElement = (e as FocusEvent).relatedTarget as Node | null;
-  if(messageField.contains(targetElement) || aiIconContainer.contains(targetElement)){
+  if(!(messageField.contains(targetElement) || aiIconContainer.contains(targetElement))){
     aiIconContainer.style.display = 'none';
   }
   });
@@ -62,7 +62,7 @@ const addIconClickListener = (aiIconContainer: HTMLDivElement) =>{
 
      const closeModal = () =>{
       modalFormContainer.remove();
-     }  
+     }
 
      const rootModal = createRoot(modalFormContainer);
      rootModal.render(React.createElement(AIPromptModal, {closeModal}));
@@ -70,7 +70,7 @@ const addIconClickListener = (aiIconContainer: HTMLDivElement) =>{
 };
 
 
-const createModalFormContainer = ():HTMLDivElement =>{
+function createModalFormContainer(): HTMLDivElement {
   const modalFormContainer  = document.createElement('div');
    modalFormContainer.id = 'prompt-modal-container';
    Object.assign(modalFormContainer.style, {

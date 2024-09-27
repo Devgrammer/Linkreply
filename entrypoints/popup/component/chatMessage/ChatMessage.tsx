@@ -5,7 +5,7 @@ interface ChatMessageProps {
   }[];
 }
 
-const ChatMessage: React.FC = ({ message }: ChatMessageProps) => {
+const ChatMessage = ({ message }: ChatMessageProps) => {
   return (
     <div className="w-full flex flex-col gap-6 mb-4 ">
       {message.map((msg, index) => (
@@ -23,4 +23,4 @@ const ChatMessage: React.FC = ({ message }: ChatMessageProps) => {
   );
 };
 
-export default ChatMessage;
+export default ChatMessage; 

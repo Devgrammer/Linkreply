@@ -1,4 +1,3 @@
-import React from "react";
 import RegenerationIcon from "../../../../../assets/regeneration.svg"
 import GenerationIcon from "../../../../../assets/generation.svg";
 import PromptInsertButton from "../promptInsertButton/PromptInsertButton";
@@ -11,7 +10,7 @@ interface PromptGenerationBtnProps {
   handleGenerate: () => void;
 }
 
-const PromptGenerationButton: React.FC = ({messages,handleGenerate}: PromptGenerationBtnProps) => {
+const PromptGenerationButton = ({messages,handleGenerate}: PromptGenerationBtnProps) => {
   return (
     <div className="prompt-generation-continaer flex items-center gap-4">
       {messages.length > 0 && <PromptInsertButton />}
