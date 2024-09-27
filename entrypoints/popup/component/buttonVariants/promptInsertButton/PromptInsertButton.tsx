@@ -1,7 +1,7 @@
-import React from "react";
 import InsertionIcon from "../../../../../assets/insert-prompt-icon.svg";
 
-const PromptInsertButton: React.FC = () => {
+const PromptInsertButton = () => {
+
   const handleInsertButton = () => {
     chrome.runtime.sendMessage({
       text: "Thank you for the opportunity! If you have any more questions or if there's anything else I can help you with, feel free to ask.",
