@@ -1,5 +1,5 @@
 import React from 'react'
-import AIWandIcon from '../../../../../assets/wand-icon.svg'
+import AIWandIcon from '../../../assets/wand-icon.svg'
 
 
 const AIReplyButton: React.FC =()=>{
