@@ -1,4 +1,4 @@
-import {injectExtensionIcon} from '@/entrypoints/popup/utilities/utilMethod';
+import {injectExtensionIcon} from '@/utilities/utilMethod';
 
 export default defineContentScript({
     matches: ['*://www.linkedin.com/messaging/*'],

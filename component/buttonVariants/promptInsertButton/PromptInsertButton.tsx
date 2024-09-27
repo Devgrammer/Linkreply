@@ -1,4 +1,4 @@
-import InsertionIcon from "../../../../../assets/insert-prompt-icon.svg";
+import InsertionIcon from "../../../assets/insert-prompt-icon.svg";
 
 const PromptInsertButton = () => {
 
